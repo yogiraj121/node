@@ -45,6 +45,8 @@ const server = http.createServer(async (req, res) => {
     switch (url) {
         // Home Route
         case '/':
+            await serveFile(path.join(VIEWS_DIR, 'home.html'), 'text/html', res);
+            break;
         case '/home':
             await serveFile(path.join(VIEWS_DIR, 'home.html'), 'text/html', res);
             break;
